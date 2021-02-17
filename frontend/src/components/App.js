@@ -8,12 +8,12 @@ export default class App extends React.Component {
     return (
       <div id="app">
         <WelcomeBar/>
-        <div class="columns">
-          <div class="column is-3">
+        <div className="columns">
+          <div className="column is-3">
             <CategoryPicker/>
           </div>
-          <div class="column">
-            <div class="section columns">
+          <div className="column">
+            <div className="section columns">
               <ServerInfoBox/>
               <ServerInfoBox/>
             </div>
