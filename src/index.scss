@@ -1,0 +1,21 @@
+@import "~bulma/sass/utilities/initial-variables";
+@import "~bulma/sass/utilities/functions";
+@import "~nord/src/sass/nord";
+
+$scheme-main: $nord0;
+$scheme-main-bis: $nord1;
+$scheme-main-ter: $nord2;
+
+$card-background-color: $nord1;
+$card-header-background-color: $nord2;
+
+$box-background-color: $scheme-main-bis;
+
+$text-light: $nord4;
+$text: $nord5;
+$text-strong: $nord6;
+
+$primary: $nord1;
+$info: $nord9;
+
+@import "~bulma/bulma";
