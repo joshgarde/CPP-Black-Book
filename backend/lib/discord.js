@@ -24,12 +24,8 @@ module.exports = {
     let response = await axios.post(`${DISCORD_ENDPOINT}/oauth2/token`, requestData, {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      validateStatus: () => { return true }
+      }
     });
-
-    console.log(redirectUri);
-    console.log(JSON.stringify(response.data));
 
     return response.data;
   }
