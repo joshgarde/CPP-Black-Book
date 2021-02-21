@@ -15,17 +15,19 @@ export default class Auth extends React.Component {
   }
 
   render() {
-    const mainText = () => {
-      if (this.state.error === true) {
+    let { authenticated, error, errorMessage } = this.state;
+
+    const statusText = () => {
+      if (error === true) {
         return (
           <div className="has-text-centered">
             <p className="subtitle">An error occured</p>
-            <p className="subtitle">{this.state.errorMessage}</p>
+            <p className="subtitle">{errorMessage}</p>
           </div>
         )
       }
 
-      if (this.state.authenticated === true) {
+      if (authenticated === true) {
         return (
           <div className="has-text-centered">
             <p className="subtitle">Successfully authenticated!</p>
@@ -34,7 +36,7 @@ export default class Auth extends React.Component {
         )
       }
 
-      if (this.state.authenticated === false) {
+      if (authenticated === false) {
         return (
           <div className="has-text-centered">
             <p className="subtitle">Authenticating...</p>
@@ -47,7 +49,7 @@ export default class Auth extends React.Component {
     return (
       <section className="hero is-large">
         <div className="hero-body">
-          {mainText()}
+          {statusText()}
         </div>
       </section>
     )
@@ -56,6 +58,7 @@ export default class Auth extends React.Component {
   async authenticate(code, redirectUri) {
     let response = await fetch(`${window.backendEndpoint}/user/auth`, {
       method: 'POST',
+      credentials: 'include',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({code, redirectUri})
     });

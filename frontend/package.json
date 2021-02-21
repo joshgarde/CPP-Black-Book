@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "start:dev": "webpack serve"
+    "start": "webpack serve"
   },
   "author": "Joshua Garde",
   "license": "MIT",

@@ -9,6 +9,8 @@ $scheme-main-ter: $nord2;
 $card-background-color: $nord1;
 $card-header-background-color: $nord2;
 
+$modal-card-head-background-color: $nord1;
+
 $box-background-color: $scheme-main-bis;
 
 $text-light: $nord4;
@@ -21,3 +23,25 @@ $primary: $nord1;
 $info: $nord9;
 
 @import "~bulma/bulma";
+
+:root {
+  --sk-color: #{$nord5};
+}
+
+hr {
+  background-color: #{$nord1};
+}
+
+.server-ico {
+  display: inline-block !important;
+  vertical-align: middle;
+}
+
+.server-entry {
+  cursor: pointer;
+  border-radius: 6px;
+
+  &:hover {
+    background-color: $nord1;
+  }
+}

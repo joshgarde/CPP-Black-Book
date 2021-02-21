@@ -7,11 +7,15 @@ const mongoose = require('mongoose');
 
 const app = express();
 
-app.use(cors());
 app.use(express.json());
 app.use(cookieParser(process.env.SESSION_SECRET));
+app.use(cors({
+  origin: process.env.FRONTEND_ENDPOINT,
+  credentials: true
+}));
 
 app.use('/user', require('./routes/user'));
+app.use('/servers', require('./routes/servers'));
 
 mongoose.connect(process.env.DATABASE_URL, {
   useNewUrlParser: true,
